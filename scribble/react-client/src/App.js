@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Login from "./components/Login";
+import Home from "./components/Home";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
 
@@ -23,8 +25,12 @@ function App() {
   console.log(data);
 
   return (
+    
     <div className="App">
-      <Login/>
+      <Router>
+          <Route path="/login" exact component={Login}/>
+          <Route path="/home" exact component={Home}/>
+      </Router>
 
     </div>
   );
