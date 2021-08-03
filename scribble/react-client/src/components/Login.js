@@ -6,8 +6,8 @@ const Login=()=>{
             <div className="input-container">
                 <h1 className="main-header">SIGN IN</h1>
                 <p className="body-text">Welcome back to your student portal!</p>
-                <input className="details" placeholder="Your username"></input>
-                <input className="details" placeholder="Your password"></input>
+                <input className="details1" placeholder="Your username"></input>
+                <input className="details1" placeholder="Your password"></input>
                 <p className="forget">forgot your password?</p>
                 
                 <Link to="/home"><div className="btn">Log in</div></Link>

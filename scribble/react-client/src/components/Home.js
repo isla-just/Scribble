@@ -15,7 +15,7 @@ const Home=()=>{
               <div className="card2"></div>
               
               <div className="classes">
-              <h5 className="schedule">Your enrollments</h5>
+              <h5 className="schedule">Upcoming classes</h5>
                     <div className="titles" style={{marginLeft: '5%'}}>Subject</div>
                     <div className="titles">Teacher</div>
                     <div className="titles">Day</div>
@@ -25,14 +25,15 @@ const Home=()=>{
 
                     <div className="appointments">
 
-                    <div className="appointment">
+                    <Link to="/classes"> <div className="appointment active-appointment">
+                   
                         <div className="labels1">Mathematics</div>
                         <div className="labels2">Mr Jones</div>
                         <div className="labels3">9 July 2021</div>
                         <div className="labels4">15:00</div>
                         <div className="labels5">A20</div>
                         <a href="https://meet.google.com/jmb-kwdg-jnn"><div className="labels6">Link</div></a>
-                    </div>
+                    </div></Link>
 
                     <div className="appointment">
                         <div className="labels1">Mathematics</div>

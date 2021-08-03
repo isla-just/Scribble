@@ -69,7 +69,7 @@ overflow: auto;
   margin-bottom: 30px;
 }
 
-.details{
+.details1{
   background-color: white;
   height: 20px;
   width: 85%;
@@ -89,7 +89,7 @@ outline: none;
 
 }
 
-.details::placeholder{
+.details1::placeholder{
   color: #ef908a;
 }
 
@@ -273,6 +273,11 @@ overflow: hidden;
 -moz-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
 }
 
+.active-appointment{
+  background-color:#fc635e59;
+  font-weight: 600;
+}
+
 .labels1{
   width: 15%;
   float: left;
@@ -357,7 +362,7 @@ position: absolute;
   -webkit-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
   position: absolute;
-  top: 22%;
+  top: 27%;
   right: 8%;
   }
 
@@ -411,4 +416,125 @@ margin-top: 20px;
 margin-left: 180px;
   font-weight: 600;
   margin-top: 700px;
+}
+
+.bigHeader{
+  font-size: 40px;
+  font-weight: 800;
+  color:#FC645E;
+  margin-left: 80px;
+  margin-top: 80px;
+}
+
+.teacher{
+  font-size: 20px;
+  font-weight: 500;
+  color:#FC645E;
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
+.checklistBlock{
+  border-radius: 5px;
+  background-color: white;
+  width:40px;
+  height:40px;
+  margin-left: 80px;
+  margin-top: 40px;
+  border:2px solid #FC645E;
+  float: left;
+}
+
+.blocking{
+  font-size: 20px;
+  font-weight: 500;
+  color:#FC645E;
+  margin-top: 50px;
+  float: left;
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.row1{
+  width:100%;
+  height: 500px;
+
+}
+
+.classDetails{
+  background-color:white;
+  width: 40%;
+  height: 390px;
+  margin-left: 80px;
+  float: left;
+  border-radius: 30px;
+  box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  margin-top: 80px;
+
+}
+
+.teacherNote{
+  background-color:white;
+  width: 40%;
+  height: 390px;
+  margin-left: 80px;
+  float: left;
+  border-radius: 30px;
+  box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  margin-top: 80px;
+}
+
+.card-header{
+  color:#FC645E;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+.announcement{
+  color:#ef908a;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  font-weight:400;
+}
+
+.illustration2{
+  width:90%;
+  height: 158px;
+  margin-top: 60px;
+  background-image: url(./assets/teacher.svg);
+  padding:20px;
+
+}
+
+.googleMeet{
+  width:50%;
+  height:auto;
+  background-color: #95DAE7;
+  color:white;
+  border-radius: 30px;
+  padding: 7px;
+  text-align: center;
+  margin:auto;
+
+  box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+}
+
+.peer-card{
+  background-color:white;
+  width: 80%;
+  height: 630px;
+  margin-left: 40px;
+  float: left;
+  border-radius: 30px;
+  box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 1px 13px 0px rgba(0,0,0,0.1);
+  margin-top: 40px;
 }
