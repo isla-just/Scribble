@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Class from "./components/Class";
+import Edit from "./components/Edit";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/login" exact component={Login}/>
           <Route path="/home" exact component={Home}/>
           <Route path="/classes" exact component={Class}/>
+          <Route path="/edit" exact component={Edit}/>
       </Router>
 
     </div>

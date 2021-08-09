@@ -114,6 +114,24 @@ if(teacher== null){
 }
 });
 
+//post
+app.post('/api/teachers', function(request, response){
+    //generate new id. length of the array plus one
+    var id=data.teachers.length +1;
+    var name=request.query.name;
+    var email=request.query.email;
+
+    //check if both queries are added 
+    if(name!="" && email!=""){
+        //add teacher to database
+        data.teachers.push({id:id, name:name, email:email});
+        response.json("new teacher added with id: "+id);
+    }else{//respond with error
+        response.status(406).json("Error while posting teacher");
+    }
+})
+
+//put
 //updating information in the api
 app.put('/api/teachers/:id', function(request, response){
     var id=request.params.id; //get id param from url

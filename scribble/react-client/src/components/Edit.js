@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 
-const Class=()=>{
+const Edit=()=>{
     return(
         <div className="container">
         <div className="logo"></div>
@@ -8,40 +8,48 @@ const Class=()=>{
       <div className="profile"></div>
 
       <div className="half1">
-          <h1 className="bigHeader">Grade 10 History</h1>
+      <h1 className="bigHeader">Grade 10 History</h1>
           <h3 className="teacher">- Mr Jones</h3>
-          <div className="checklistBlock"></div>
-          <h3 className="blocking">Period 3: 09:00-10:00</h3>
 
 <div className="row1">
 
-          <div className="classDetails">
+          <div className="classDetails2">
               <h3 className="card-header">Class details</h3>
-              <div className='smol-half'style={{marginLeft:'20px',width:'80px'}} >
-                         <p>Class:<br></br><br></br>Group:<br></br><br></br>Classroom:<br></br><br></br>Period:</p>
-                         
-                     </div>
-                     <div className='smol-half' style={{marginRight:'20px', width:'140px'}}>
-                     <p style={{fontWeight:600, textAlign:'right'}}>Grade 10 English<br></br><br></br>Group 2<br></br><br></br>A1<br></br><br></br>Period 3</p>
-                     </div>
 
-            <a href="meet.google.com/hnz-qcte-qhj"><div className="googleMeet">Google meet link</div></a>
-        
+              <p className="labelInput">Class name:</p>
 
+                  <input className="inputField1" placeholder="History"></input>
+
+                  <p className="labelInput">Group number</p>
+                  <input className="inputField1" placeholder="Group 3"></input>
+
+                  <p className="labelInput">Classroom:</p>
+                  <input className="inputField1" placeholder="21 A"></input>
+
+                  <p className="labelInput">Period:</p>
+                  <input className="inputField1" placeholder="10th period"></input>
+
+                  <p className="labelInput">Time:</p>
+                  <input className="inputField1" placeholder="10:00-11:00"></input>
+                 
+                 <button className="changes">Make changes</button>
+  
           </div>
-          <div className="teacherNote">
-          <h3 className="card-header">A note from your teacher</h3>
-          <h4 className="announcement">Hi class, please remember your upcoming presentation on the 20th of August!</h4>
-          <div className="illustration2"></div>
+          <div className="teacherNote2">
+          <h3 className="card-header">Add a note to your class</h3>
+          <textarea className="announcement2" placeholder="Hi class, please remember your upcoming presentation on the 20th of August!"></textarea>
+          <button className="postmessage">Post message</button>
+          <div className="illustration2" style={{marginTop:'100px'}}></div>
+
           </div>
           {/* //teachernote */}
-</div>
+</div>  
 {/* row 1 */}
       </div>
       {/* half1 */}
           
         <div className="half2">
-            <h2 className="card-header" style={{fontWeight:'700'}}>Your peers</h2>
+            <h2 className="card-header" style={{fontWeight:'700'}}>Learners</h2>
             <div className="peer-card">
                 <h3 className="studentName">Elsie Nunez</h3>
                 <h4 className="groupNo">- Group 4</h4>
@@ -73,4 +81,4 @@ const Class=()=>{
         </div>
     );
 }
-export default Class
+export default Edit
