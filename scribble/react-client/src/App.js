@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
 
-  const [data, setData]=useState();
+  const [data, setData]=useState([]);
 
   useEffect(()=>{
     var requestOptions ={// sets the request info
@@ -15,7 +15,7 @@ function App() {
     };
 
     async function getData(){
-      const response=await fetch ('http://localhost:8000/api/students', requestOptions);
+      const response=await fetch ('http://localhost:8000/api/learners', requestOptions);
       const data =await response.json();
       setData(data);
     }
@@ -30,10 +30,12 @@ function App() {
     
     <div className="App">
       <Router>
+        <Switch>
           <Route path="/login" exact component={Login}/>
           <Route path="/home" exact component={Home}/>
-          <Route path="/classes" exact component={Class}/>
-          <Route path="/edit" exact component={Edit}/>
+          <Route path="/class" exact component={Class}/>
+          <Route path="/edit:id" exact component={Edit}/>
+          </Switch>
       </Router>
 
     </div>
