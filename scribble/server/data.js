@@ -86,9 +86,9 @@ var teachers = [
 ];
 
 var learners = [
-    {id: 01, name: "Ian Reid", classes: [1,3,5,6,7,9], password:"1234", username:"ianR123"},
-    {id: 02, name: "Lynne Brock", classes: [12, 13, 15, 16, 18, 19], password:"1234", username:"LyneeB123"},
-    {id: 03, name: "Jeffery Medina", classes: [21, 24, 25, 27, 28, 30], password:"1234", username:"JeffM123"}
+    {id: 1, name: "Ian Reid", classes: [1,3,5,6,7,9], password:"1234", email:"ianR123@gmail.com"},
+    {id: 2, name: "Lynne Brock", classes: [12, 13, 15, 16, 18, 19], password:"1234", email:"lyneeB123@gmail.com"},
+    {id: 3, name: "Jeffery Medina", classes: [21, 24, 25, 27, 28, 30], password:"1234", email:"jeffM123@gmail.com"}
 ];
 
 module.exports = {classes: classes, slots: slots, teachers: teachers, learners: learners};
