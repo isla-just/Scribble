@@ -66,7 +66,7 @@ overflow: auto;
   text-decoration: underline;
   margin-right: 6%;
   cursor: pointer;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .details1{
@@ -118,6 +118,7 @@ outline: none;
   margin-left:28%;
   font-weight: 700;
   background-color:#FC645E;
+  margin-top: 20px;
 }
 
 .userSelect1{
@@ -149,6 +150,13 @@ outline: none;
   margin-right:3%;
 }
 
+.error{
+  width: 100%;
+  color:white;
+  position: absolute;
+  top:66%;
+  left:44%;
+}
 .activeUser{
   width:30%;
   height:auto;

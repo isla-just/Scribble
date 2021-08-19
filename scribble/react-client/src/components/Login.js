@@ -5,8 +5,6 @@ import $ from 'jquery';
 
 const Login=()=>{
 
-
-
     $(()=>{ 
         $(".userSelect2").on("click", function(){
          $(this).addClass("activeUser");
@@ -19,30 +17,27 @@ const Login=()=>{
             $(".userSelect2").removeClass("activeUser");
         
            });    
+
+        $(".error").hide();
     });
     
+    //gets the values of the input fields
     const [data, setData] = useState({});
+
+    //gets the value of the api enpoint for those values
+    const [auth, setAuth]=useState({});
     const history = useHistory();
-    var getEmail="";
-    var getPword="";
 
+    //checks the state of the button
+    const [btnState, setBtnState]=useState(false);
 
-    // useEffect(()=>{
-    //     var requestOptions = {
-    //     method: 'GET',
-    //     };
+    if($(".btnSubmit").on("click", function(){
+        console.log("button has been pressed");
+        $(".error").show();
+        setBtnState(true);
+    }));
 
-    //     async function getData() {
-    //     //http://localhost:8000/api/user/hunt@highschool.com/1234
-    //     const response = await fetch("http://localhost:8000/api/"+$(".activeUser").attr("value")+'/', requestOptions);
-    //     const result = await response.json();
-    //     setData(result);
-    //     };
-
-    //     getData();
-    // }, [$("activeUser").attr("value")]);
-
-    // console.log(data);
+    console.log(btnState);
 
     const onEmailChange = event => {
         setData({email: event.target.value, password: data.password});
@@ -57,24 +52,50 @@ const Login=()=>{
         // console.log({email: data.email, password: event.target.value});
         // getPword={password: event.target.value}
     };
-    console.log(getPword);
-    console.log(getEmail);
+    console.log(data.email+" "+data.password);
+    // console.log(data.password);
 
-    const onSubmit = event => {  
-        event.preventDefault();
+
+    useEffect(()=>{
+        var requestOptions = {
+        method: 'GET',
+        };
+
+        async function getData() {
+        //http://localhost:8000/api/user/hunt@highschool.com/1234
+        const response = await fetch( "http://localhost:8000/api/user/"+data.email+'/'+data.password+"", requestOptions);
+        const result = await response.json();
+        setAuth(result);
+        };
+
+        getData();
+    }, [btnState]);
+
+    if(auth.userid != undefined){
+        history.push('/home');
+    }else if(auth.userid===undefined){
+        $('.error').text("your username or password is incorrect");
+        //wipe the array
+        
+    }
+
+    console.log(data);
+
+    // const onSubmit = event => {  
+    //     event.preventDefault();
 
 //how do I check if im getting a 404 or not
-        const url = 'http://localhost:8000/api/user/'+data.email+'/'+data.password;
-        const requestOptions = {
-            method : 'GET', 
-        };
+    //     const url = 'http://localhost:8000/api/user/'+data.email+'/'+data.password;
+    //     const requestOptions = {
+    //         method : 'GET', 
+    //     };
         
-        fetch(url,requestOptions);
+    //     fetch(url,requestOptions);
 
-        console.log(url);
-        console.log(event);
+    //     console.log(url);
+    //     console.log(event);
       
-    };
+    // };
 
 
     return(
@@ -90,7 +111,8 @@ const Login=()=>{
                     <div className="userSelect1 activeUser" value="learners" style={{marginLeft:'60px'}}>I am a student</div>
                     <div className="userSelect2" value="teachers">I am a teacher</div>
                     
-                   <button className="btnSubmit" type="submit" onClick={onSubmit} style={{marginTop:"30px"}}>Log in</button>
+                    <h5 className="error"></h5>
+                   <div className="btnSubmit" style={{marginTop:"100px"}}>Log in</div>
                 </form>
             </div>
         </div>
