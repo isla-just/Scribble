@@ -72,7 +72,8 @@ const Login=()=>{
     }, [btnState]);
 
     if(auth.userid != undefined){
-        history.push('/home');
+        history.push("/home/?id="+auth.userid+"&userType="+auth.userType);
+
     }else if(auth.userid===undefined){
         $('.error').text("your username or password is incorrect");
         //wipe the array

@@ -34,7 +34,7 @@ function App() {
           <Route path="/login" exact component={Login}/>
           <Route path="/home" exact component={Home}/>
           <Route path="/class" exact component={Class}/>
-          <Route path="/edit:id" exact component={Edit}/>
+          <Route path="/edit" exact component={Edit}/>
           </Switch>
       </Router>
 

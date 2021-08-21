@@ -84,13 +84,13 @@ app.get('/api/learners/', function (request, response){
 
     //get ll the classes taught by mr hunt http://localhost:8000/api/teachers/Mr%20Hunt
 
-app.get('/api/teachers/:name', function(req, res){
+app.get('/api/teachers/:id', function(req, res){
     var teacherid = null;
 
     for (var i=0;i<data.teachers.length; i++){
       
         
-        if(data.teachers[i].name === req.params.name){
+        if(data.teachers[i].id == req.params.id){
 
             teacherid = data.teachers[i].classes;
             for(var j=0; j < teacherid.length;j++){
@@ -103,7 +103,7 @@ app.get('/api/teachers/:name', function(req, res){
 
     };
     if(teacherid === null){
-        res.status(404).json("No teacher with name:'" + req.params.name + "' found.")
+        res.status(404).json("No teacher with name:'" + req.params.id + "' found.")
     };
 
     teacherClasses=[];
@@ -135,7 +135,33 @@ app.get('/api/teachers/:name', function(req, res){
 var learnerClasses=[];
 
 //getting all of the classes that a learner takes
-//http://localhost:8000/api/learners/Lynne%20Brock
+//http://localhost:8000/api/learners/1
+
+app.get('/api/learners/:id', function(req, res){
+    var learnerid = null;
+
+    for (var i=0;i<data.learners.length; i++){
+
+        if(data.learners[i].id == req.params.id){
+           
+            console.log(data.learners[i].id);
+
+            learnerid = data.learners[i].classes;
+            for(var j=0; j < learnerid.length;j++){
+                learnerClasses.push(data.classes[data.learners[i].classes[j]-1]);
+
+            };
+            res.json(learnerClasses);
+        };
+
+    };
+    // if(learnerid === null){
+    //     res.status(404).json("No learner with name:'" + req.params.id + "' found.")
+    // };
+
+    learnerClasses=[];
+
+});
 
 app.get('/api/learners/:name', function(req, res){
     var learnerid = null;
@@ -156,7 +182,7 @@ app.get('/api/learners/:name', function(req, res){
 
     };
     if(learnerid === null){
-        res.status(404).json("No teacher with name:'" + req.params.name + "' found.")
+        res.status(404).json("No learner with name:'" + req.params.name + "' found.")
     };
 
     learnerClasses=[];
@@ -320,7 +346,7 @@ app.get("/api/user/:email/:password", function(request, response){
     for(var i=0;i<data.teachers.length;i++){
         if(data.teachers[i].email===request.params.email && data.teachers[i].password===request.params.password){
             userid=data.teachers[i].id;
-            response.json({"userid": userid, "email":data.teachers[i].email, "password":data.teachers[i].password});
+            response.json({"userid": userid, "email":data.teachers[i].email, "password":data.teachers[i].password, "userType":"teacher"});
         }
     }
 
@@ -328,7 +354,7 @@ app.get("/api/user/:email/:password", function(request, response){
         for(var i=0;i<data.learners.length;i++){
             if(data.learners[i].email===request.params.email && data.learners[i].password===request.params.password){
                 userid=data.learners[i].id;
-                response.json({"userid": userid, "email":data.learners[i].email, "password":data.learners[i].password});
+                response.json({"userid": userid, "email":data.learners[i].email, "password":data.learners[i].password, "userType":"learner"});
             }
         }
 

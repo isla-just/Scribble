@@ -3,7 +3,19 @@ import React, {useState, useEffect} from 'react';
 
 const Class=()=>{
 
-    const [data, setData]=useState([]);
+    var undefinedData=[];
+
+    const [data, setData]=useState(null);
+
+        //getting the 2 parameters from the url 
+const queryString=window.location.search;
+const URLparams=new URLSearchParams(queryString);
+
+const classid=URLparams.get('id');
+const usertype=URLparams.get('usertype');
+
+console.log(usertype);
+
 
     useEffect(()=>{
         var requestOptions={
@@ -11,46 +23,57 @@ const Class=()=>{
         };
 
         async function getData1(){
-            const response=await fetch("http://localhost:8000/api/class?class=3", requestOptions);
+            const response=await fetch("http://localhost:8000/api/class?class="+classid, requestOptions);
             const result = await response.json();
-            setData(result);
+            setData(result.data);
         }
 
         getData1();
 
+
     },[]);//use effect
+        console.log(data);
 
-    var subject=[];
-    var teacher=[];
-    var period=[];
-    var group=[];
-    var classroom=[];
-    var meetLink=[];
+    var subject="";
+    var teacher="";
+    var periods=[];
+    var days=[];
+
+    var group="";
+    var classroom="";
+    var meetLink="";
     var peers=[];
+    var message="";
 
-    var undefinedData=[];
-    while(data===undefined){
-        undefinedData.push(data);
-        console.log("api not yet loaded")
+        while(data===undefined){
+            undefinedData.push(data);
+            console.log("api not yet loaded")
+        }  
+                console.log(undefinedData);
+                
+                if(data!== undefined&&data!==null){
+                    subject=data.details.subject;
+                    teacher=data.teacher;
+                    group=data.details.group;
+                    classroom=data.details.classroom;
+                    meetLink=data.details.link;
+                    message=data.details.message;
 
-            }  
-            
-            if(data!== undefined&&data!==null){
-                // subject.push(data.data.details.subject);
-                // teacher.push(data.data.teacher);
-                // period.push(data.data.period.day);
-                // group.push(data.data.details.group);
-                // classroom.push(data.data.details.classroom);
-  
-            }else{
-                console.log("api not loaded");
-    
-            }//if else
+                  for(var i=0;i<data.period[0].length;i++){
+                      periods.push(data.period.period);
+                  }
 
-  
+                  for(var i=0;i<data.learners.length;i++){
+                    peers.push(data.learners[i]);
+                }
+      
+                }else{
+                    console.log("api not loaded");
+        
+                }//if else
 
-    console.log(data);
-    console.log(period)
+       console.log(peers);
+       console.log(periods);
 
     return(
         <div className="container">
@@ -61,8 +84,9 @@ const Class=()=>{
       <div className="half1">
           <h1 className="bigHeader">{subject}</h1>
           <h3 className="teacher">- {teacher}</h3>
-          <div className="checklistBlock"></div>
-          <h3 className="blocking">Period 3: 09:00-10:00</h3>
+
+             <h3 className="blocking" style={{marginLeft:'90px'}}>blocking</h3>
+
 
 <div className="row1">
 
@@ -82,7 +106,7 @@ const Class=()=>{
           </div>
           <div className="teacherNote">
           <h3 className="card-header">A note from your teacher</h3>
-          <h4 className="announcement">Hi class, please remember your upcoming presentation on the 20th of August!</h4>
+          <h4 className="announcement">{message}</h4>
           <div className="illustration2"></div>
           </div>
           {/* //teachernote */}
@@ -94,30 +118,17 @@ const Class=()=>{
         <div className="half2">
             <h2 className="card-header" style={{fontWeight:'700'}}>Your peers</h2>
             <div className="peer-card">
-                <h3 className="studentName">Elsie Nunez</h3>
-                <h4 className="groupNo">- Group 4</h4>
+                <h3 className="studentName">{peers[0]}</h3>
+
 
                 <div className="line"></div>
 
-                <h3 className="studentName">Dean Turner</h3>
-                <h4 className="groupNo">- Group 2</h4>
+                <h3 className="studentName">{peers[1]}</h3>
 
-                <div className="line"></div>
 
-                <h3 className="studentName">Valentine Annable</h3>
-                <h4 className="groupNo">- Group 4</h4>
+<div className="line"></div>
 
-                <div className="line"></div>
-
-                <h3 className="studentName">Victor Bowman</h3>
-                <h4 className="groupNo">- Group 1</h4>
-
-                <div className="line"></div>
-
-                <h3 className="studentName">John Simons</h3>
-                <h4 className="groupNo">- Group 4</h4>
-
-                <div className="line"></div>
+            
             </div>
         </div>
 
