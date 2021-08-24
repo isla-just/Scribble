@@ -12,7 +12,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/isla-just/Scribble">
-    <img src="https://github.com/isla-just/Scribble/blob/main/readMeimg/concept1.jpg" alt="Logo" width="" height="80">
+    <img src="./readMeImg/logo.png" alt="Logo" width="" height="80">
   </a>
 
   <p align="center">
