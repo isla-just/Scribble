@@ -134,7 +134,7 @@ app.get('/api/teachers/:id', function(req, res){
 
 var learnerClasses=[];
 
-//getting all of the classes that a learner takes
+//getting all of the classes that a learner takes - displayed once loged in on classList
 //http://localhost:8000/api/learners/1
 
 app.get('/api/learners/:id', function(req, res){
@@ -162,6 +162,8 @@ app.get('/api/learners/:id', function(req, res){
     learnerClasses=[];
 
 });
+
+//getting the learner according to name
 
 app.get('/api/learners/:name', function(req, res){
     var learnerid = null;

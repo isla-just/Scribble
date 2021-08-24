@@ -12,11 +12,11 @@
 <br />
 <p align="center">
   <a href="https://github.com/isla-just/Scribble">
-    <img src="scribble/readMeImg/logo.png" alt="Logo" width="" height="80">
+    <img src="readMeImg/logo.png" alt="Logo" width="" height="80">
   </a>
 
   <p align="center">
-  A learning portal allowing students and teachers to access their online class details
+  A creative learning portal allowing students and teachers to access their online class details
     <br />
     <a href="https://github.com/isla-just/Scribble"><strong>Explore the docs »</strong></a>
     <br />
@@ -73,14 +73,14 @@
 
 # About The Project
 
-  <img src="attatchments/mockup.jpg" alt="mockup" width="" height="600" align="center">
+  <img src="readMeImg/mockup1.jpg" alt="mockup" width="800" height="" align="center">
 
 <br></br>
 
 ## Built With
 
-* [https://nodejs.org/en/](node.js)
-* [https://socket.io/](socket.io)
+* [https://expressjs.com/](express.js)
+* [https://reactjs.org/](react.js)
 * [https://www.javascript.com/](javascript)
 
 <br></br>
@@ -113,25 +113,22 @@ To run a local copy of Scribble follow these simple steps:
    ```
 2. Install NPM packages - client.js
    ```sh
-   npm install --save es6-template-strings
-   npm install socket.io-client
-   npm install node-static
-
+   npm install
+   npm install react-calendar
+   npm install react-router-dom
    ```
 
 3. Install NPM packages - server.js
    ```sh
-   npm install --save es6-template-strings
-   npm install socket.io
-
+    npm install
+    npm install express --save
+    npm install cors
    ```
 
 <br></br>
 
 # Features and functions 
-This is a chatroom website that allows multiple users (clients) to login to the chatroom and send messages through the server. Each client will see all the other client's messages - functioning as an interactive groupchat. 
-
-The user can login with aithentication, be welcomed to their Scribble profile, view a list of the users online currently available to chat, send a message and communicate with other users. 
+This is a student portal website that allows both teachers and students to view their class details for all online classes. The user can login to their account wherein the login information is pulled directly from the api and then they are taken to their corresponding home page. The user can view all of ther classes, a styled calendar showing them where they are and their personal details. The user can click on a class to access more details including the teacher message and the list of students. Teachers can even edit the class and send their students a message for the class. 
 
 See the [open issues](https://github.com/isla-just/Scribble/issues) for a list of proposed features (and known issues).
 
@@ -139,37 +136,36 @@ See the [open issues](https://github.com/isla-just/Scribble/issues) for a list o
 
 # Concept process
 ### Ideation
-For this project I started off with coming up with my brand. I desgned a logo and put together a colour palette. I also started looking at some inspiration images. Here is the moodboard I put together:
+For this project I started off with coming up with my brand. I desgned a logo and put together a colour palette. I also started looking at some inspiration images and thinking about the flow of my website. 
 
 
-  <img src="attatchments/chatterbox-02.png" alt="mockup" width="" height="600" align="center">
+  <img src="readMeImg/concept1.jpg" alt="concept" width="800" height="" align="center">
 <br></br>
 
 ### Wireframes
 
-It was then time to start designing and planning the layout of my chatroom website. Here are some sketched wireframes that I drew:
-  <img src="attatchments/chatterbox-03.png" alt="mockup" width="" height="600" align="center">
+It was then time to start designing and planning the layout of my website. Here are some sketched wireframes that I drew:
+  <img src="readMeImg/wireframe.jpg" alt="wireframe" width="800" height="" align="center">
 
-  I ended up changing this design quite a lot - I changed the tiled layout into rounded cards
 <br></br>
 
 ### User-flow diagram
-Next, I did a simple userflow diagram that maps out the basic flow of information as the user interacts with the website 
-  <img src="attatchments/chatterbox-04.png" alt="mockup" width="" height="600" align="center">
+Next, I did a simple userflow diagram that maps out the basic flow of information as the user interacts with the website. This is the one I did for the teacher profile (the flows are very similar except students cant edit classes)
+  <img src="readMeImg/userFlow.jpg" alt="user flow" width="800" height="" align="center">
 <br></br>
 
 # Development process and implementation
 Roadmap of my progress and struggles over the last 9 weeks
-* **login page** - The first step of my development process involved creating a simple welcoming response after the HTTP request was sent. I also focussed on styling in this phase
-* **Routing and templates** - We then learned how to implement routing in our projects so I could start implementing my chat page. We also learned how to read HTML files and use them as templates
-* **Socket.io** - I had a bit of a rocky start with socket.io but I managed to implement the communication between the client and server and to have multiple clients connected
-* **Sending messages** - Next we learned how to write to text files to store chat history. This was where I started to format my responses nicely and output the messages
+1. I started implementing my design in my React frontend first and made sure I was happy with the frontend design.
+2. then I started working on my backend making sure that all of the api information displayed on the backend. I also started coding some more complex api endpoints to return more specific data and also linking data between the diferent datasets in mt data file that I was given
+3. Then it was time to work on linking the frontend and the backend and actually displaying the api content. This was relatively easy however I really struggles with React rendering dom elements from the api before the api call was done so I had to do some workaround code to fix that error
+4. Next it was time to actually implement the key website functionality from the backend onto the frontend. The login form was surprisingly the more challenging part of this. Implementing the crud functionality was fairly simple
+5. Next I just did some frontend refinements and made sure that everything was working nicely. Here I added some jquery and some nice popups for when the teacher edits the information. 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This project could be built upon by adding some more cool functionality like the stickers and separate chatroom feature. This project could also be used as a resource for building a node.js website primarily using node. 
-  <img src="attatchments/usage.png" alt="mockup" width="700" height="" align="center">
+This project could be built upon by adding loads of different features. Perhaps a sign up form would be useful and I also would have liked to implement the search for a user functionality. This project could also be used as a resource for building a React website with an express backend. React worked super well in terms of displaying and updating the content dynamically because it is an SPA
   <br></br>
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -212,8 +208,14 @@ Project Link: [https://github.com/isla-just/Scribble](https://github.com/isla-ju
 * [https://smartmockups.com/mockups/laptop]()
 * [https://smartmockups.com/mockups/desktop]()
 * [https://www.freepik.com/free-vector/smiling-people-avatar-set-different-men-women-characters-collection_13663484.htm#position=4]()
-* [https://www.freepik.com/free-vector/human-hand-holding-mobile-phone-with-text-messages_9175328.htm#position=5]()
+* [https://www.freepik.com/free-vector/flat-linearonline-
+learning-landingpage_
+13720079.htm#position=0]()
 * [https://github.com/ArmandPret/rona]()
+* [https://stackoverflow.com/questions/42914666/react-router-external-link]()
+* [https://stackoverflow.com/questions/51003189/reactjs-how-to-style-react-calendar]()
+* [https://www.npmjs.com/package/simple-react-calendar]()
+* lecturers Christof Enslin and Armand Pretorius
 
 
 
