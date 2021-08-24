@@ -73,7 +73,7 @@
 
 # About The Project
 
-  <img src="https://github.com/isla-just/Scribble/blob/main/readMeimg/logo.png" alt="mockup" width="800" height="" align="center">
+  <img src="https://github.com/isla-just/Scribble/blob/main/readMeimg/mockup1.jpg" alt="mockup" width="800" height="" align="center">
 
 <br></br>
 
