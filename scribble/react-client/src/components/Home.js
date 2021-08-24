@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import ClassList from './ClassList'
 import React, {useState, useEffect} from 'react';
+import Cal from './Calendar';
 
 const Home=()=>{
 
@@ -81,7 +82,9 @@ console.log(userid)
                   <h1 className="header" style={{marginTop:'105px', marginLeft:'50px', fontWeight:500, width:'160px'}}>Welcome <br></br>{studentName[userid-1]}!</h1>
                   <div className="illustration"></div>
               </div>
-              <div className="card2"></div>
+              <div className="card2">
+                  <Cal/>
+              </div>
               
            <ClassList/>
           </div>
@@ -103,7 +106,7 @@ console.log(userid)
 
               </div>
                <div className="circle"></div>
-               <Link to="/login">
+               <Link to="/">
                <div className='logout'>Log out</div>
                </Link>
           </div>

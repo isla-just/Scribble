@@ -14,8 +14,6 @@ const URLparams=new URLSearchParams(queryString);
 const classid=URLparams.get('id');
 const usertype=URLparams.get('usertype');
 
-console.log(usertype);
-
 
     useEffect(()=>{
         var requestOptions={
@@ -58,13 +56,14 @@ console.log(usertype);
                     classroom=data.details.classroom;
                     meetLink=data.details.link;
                     message=data.details.message;
-
-                  for(var i=0;i<data.period[0].length;i++){
-                      periods.push(data.period.period);
-                  }
+                    periods.push(data.period);
 
                   for(var i=0;i<data.learners.length;i++){
                     peers.push(data.learners[i]);
+                }
+
+                for(var i=0;i<data.period.length;i++){
+                    periods.push(data.period[i][i]);
                 }
       
                 }else{
@@ -82,10 +81,8 @@ console.log(usertype);
       <div className="profile"></div>
 
       <div className="half1">
-          <h1 className="bigHeader">{subject}</h1>
-          <h3 className="teacher">- {teacher}</h3>
-
-             <h3 className="blocking" style={{marginLeft:'90px'}}>blocking</h3>
+          <h1 className="bigHeader" style={{marginTop:'120px', fontSize:'60px'}}>{subject}</h1>
+          <h3 className="teacher" style={{fontSize:'30px'}}>- {teacher}</h3>
 
 
 <div className="row1">
@@ -100,7 +97,7 @@ console.log(usertype);
                      <p style={{fontWeight:600, textAlign:'right', width:'150px'}}>{subject}<br></br><br></br>{group}<br></br><br></br>{classroom}<br></br><br></br>Period 3</p>
                      </div>
 
-            <a href="meet.google.com/hnz-qcte-qhj"><div className="googleMeet">Google meet link</div></a>
+                     <Link to={{ pathname: `${meetLink}`}} target="_blank" ><div className="googleMeet">Google meet link</div> </Link>
         
 
           </div>
@@ -117,19 +114,19 @@ console.log(usertype);
           
         <div className="half2">
             <h2 className="card-header" style={{fontWeight:'700'}}>Your peers</h2>
-            <div className="peer-card">
-                <h3 className="studentName">{peers[0]}</h3>
+    <div className="peer-card">
+            {peers.map((classList) => (
+                <div style={{width:'100%'}}>
+              
+                    <h3 className="studentName">{classList}</h3>
+                    <div className="line"></div>
+
+                    </div>
+            ))};
 
 
-                <div className="line"></div>
-
-                <h3 className="studentName">{peers[1]}</h3>
-
-
-<div className="line"></div>
-
-            
             </div>
+
         </div>
 
         </div>

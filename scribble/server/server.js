@@ -407,30 +407,84 @@ app.get("/api/users/", function(request, response){
 //put
 // updating information in the api
 
-app.put('/api/teachers/:id', function(request, response){
+// http://localhost:8000/api/class/3
+app.put('/api/class/:id', function(request, response){
     var id=request.params.id; //get id param from url
 
     //get values from query parameters
-    var name=request.query.name;
-    var email=request.query.email;
+    var subject=request.body.subject;
+    var group=request.body.group;
+    var classroom=request.body.classroom;
+    var slot=request.body.slot;
+    var link=request.body.link;
 
-    var emailIndex=null;
+    var idIndex=null;
     //loop through teachers data to find the exercise index
-    for(var i=0;i<data.teachers.length;i++){
-        if(data.teachers[i].id===parseInt(id)){
-        emailIndex=i;//set found index
+    for(var i=0;i<data.classes.length;i++){
+        if(data.classes[i].id===parseInt(id)){
+        idIndex=i;//set found index
     }//if
     }//for
 
-    if(emailIndex==null){//if no exercise found return 404
-        response.status(404).json("no exercise with id "+id+" found");
-    }else{
-        if(name!=""){
-            data.teachers[emailIndex].name=name;
+    if(idIndex==null){//if no exercise found return 404
+        response.status(404).json("no class with id "+id+" found");
+    }else if(idIndex != null){
 
+        if (subject != "") {
+            data.classes[idIndex].subject=subject;
         }
-        response.json("Exercise with id "+id+"updated");
+        
+        if (group != "") {
+            data.classes[idIndex].group=group;
+        }
+
+        if (classroom != "") {
+            data.classes[idIndex].classroom=classroom;
+        }
+        
+        if (slot != "") {
+            data.classes[idIndex].slot=slot;
+        }
+                
+        if (link != "") {
+            data.classes[idIndex].link=link;
+        }
+
+        response.json("class with id "+id+"updated");
+    }else{
+        response.json("there is a problem");
     }
+
+})//function
+
+// http://localhost:8000/api/class/3
+app.put('/api/message/:id', function(request, response){
+    var id=request.params.id; //get id param from url
+
+    //get values from query parameters
+    var message=request.body.message;
+
+    var idIndex=null;
+    //loop through teachers data to find the exercise index
+    for(var i=0;i<data.classes.length;i++){
+        if(data.classes[i].id===parseInt(id)){
+        idIndex=i;//set found index
+    }//if
+    }//for
+
+    if(idIndex==null){//if no exercise found return 404
+        response.status(404).json("no class with id "+id+" found");
+    }else if(idIndex != null){
+
+        if (message != "") {
+            data.classes[idIndex].message=message;
+        }
+
+        response.json("class with id "+id+"updated");
+    }else{
+        response.json("there is a problem");
+    }
+
 })//function
 
 //deleting a teacher
@@ -452,7 +506,6 @@ app.delete('/api/teachers/:id', function(request, response){
         response.json("Teacher with id "+id+"has been deleted");
     }
 })
-
 
 //listen for server on port 8000
 app.listen(8000, function(){

@@ -71,6 +71,7 @@ const usertype=URLparams.get('userType');
               <div className="appointments">
 
               {data.map((classList) => (
+                  <div>
             <Link to={`/class/?id=${classList.id}&usertype=${usertype}`}> 
                     <div className="appointment">
                     <div className="labels1">{classList.id}</div>
@@ -78,10 +79,13 @@ const usertype=URLparams.get('userType');
                     <div className="labels3" style={{marginLeft:"-30px", width:"200px"}}>{classList.subject}</div>
                     <div className="labels4" style={{marginLeft:"20px"}}>{classList.group}</div>
                     <div className="labels5" style={{marginLeft:"-20px"}}>{classList.classroom}</div>
-                    <Link to={`${classList.link}`}><div className="labels6">Google meet link</div></Link>
+        
                 
-                </div></Link>
-                ))}
+                    </div></Link>
+
+            <Link to={{ pathname: `${classList.link}`}} target="_blank" ><div className="labels6">Google meet link</div> </Link>
+            </div>
+            ))}
 
           
 
@@ -105,6 +109,7 @@ const usertype=URLparams.get('userType');
               <div className="appointments">
 
               {data.map((classList) => (
+                  <div>
             <Link to={`/edit/?id=${classList.id}& usertype=${usertype}`}> 
                     <div className="appointment">
                     <div className="labels1">{classList.id}</div>
@@ -112,9 +117,14 @@ const usertype=URLparams.get('userType');
                     <div className="labels3" style={{marginLeft:"-30px", width:"200px"}}>{classList.subject}</div>
                     <div className="labels4" style={{marginLeft:"20px"}}>{classList.group}</div>
                     <div className="labels5" style={{marginLeft:"-20px"}}>{classList.classroom}</div>
-                    <Link to={`${classList.link}`}><div className="labels6">Google meet link</div></Link>
+
+               
+      
                 
                 </div></Link>
+
+                <Link to={{ pathname: `${classList.link}`}} target="_blank" ><div className="labels6">Google meet link</div> </Link>
+                </div>
                 ))}
 
           
