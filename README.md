@@ -16,7 +16,7 @@
   </a>
 
   <p align="center">
-    A fun and interactive chatroom done with Node.js and socket.io
+  A learning portal allowing students and teachers to access their online class details
     <br />
     <a href="https://github.com/isla-just/Scribble"><strong>Explore the docs »</strong></a>
     <br />
