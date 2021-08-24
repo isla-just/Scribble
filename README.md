@@ -12,7 +12,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/isla-just/Scribble">
-    <img src="./readMeImg/logo.png" alt="Logo" width="" height="80">
+    <img src="https://github.com/isla-just/Scribble/blob/main/readMeimg/concept1.jpg" alt="Logo" width="" height="80">
   </a>
 
   <p align="center">
@@ -234,5 +234,4 @@ learning-landingpage_
 [license-url]: https://github.com/isla-just/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/isla-just
-
 
