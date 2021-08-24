@@ -12,7 +12,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/isla-just/Scribble">
-    <img src="./readMeImg/logo.png" alt="Logo" width="" height="80">
+    <img src="https://github.com/isla-just/Scribble/blob/main/readMeimg/logo.png" alt="Logo" width="" height="80">
   </a>
 
   <p align="center">
@@ -73,7 +73,7 @@
 
 # About The Project
 
-  <img src="./readMeImg/mockup1.jpg" alt="mockup" width="800" height="" align="center">
+  <img src="https://github.com/isla-just/Scribble/blob/main/readMeimg/logo.png" alt="mockup" width="800" height="" align="center">
 
 <br></br>
 
@@ -139,19 +139,19 @@ See the [open issues](https://github.com/isla-just/Scribble/issues) for a list o
 For this project I started off with coming up with my brand. I desgned a logo and put together a colour palette. I also started looking at some inspiration images and thinking about the flow of my website. 
 
 
-  <img src="./readMeImg/concept1.jpg" alt="concept" width="800" height="" align="center">
+  <img src="https://github.com/isla-just/Scribble/blob/main/readMeimg/concept1.jpg" alt="concept" width="800" height="" align="center">
 <br></br>
 
 ### Wireframes
 
 It was then time to start designing and planning the layout of my website. Here are some sketched wireframes that I drew:
-  <img src="readMeImg/wireframe.jpg" alt="wireframe" width="800" height="" align="center">
+  <img src="https://github.com/isla-just/Scribble/blob/main/readMeimg/wireframe.jpg" alt="wireframe" width="800" height="" align="center">
 
 <br></br>
 
 ### User-flow diagram
 Next, I did a simple userflow diagram that maps out the basic flow of information as the user interacts with the website. This is the one I did for the teacher profile (the flows are very similar except students cant edit classes)
-  <img src="./readMeImg/userFlow.jpg" alt="user flow" width="800" height="" align="center">
+  <img src="https://github.com/isla-just/Scribble/blob/main/readMeimg/userFlow.jpg" alt="user flow" width="800" height="" align="center">
 <br></br>
 
 # Development process and implementation
